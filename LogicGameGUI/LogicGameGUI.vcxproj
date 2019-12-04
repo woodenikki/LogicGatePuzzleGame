@@ -143,11 +143,13 @@
   <ItemGroup>
     <ClInclude Include="GameModel.h" />
     <ClInclude Include="Gate.h" />
+    <ClInclude Include="Gridblock.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="LogicGameForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Output.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Terminal.h" />
     <ClInclude Include="Wire.h" />
   </ItemGroup>
@@ -157,10 +159,14 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\Downloads\off.png" />
-    <Image Include="..\..\..\..\Downloads\on.png" />
-    <Image Include="..\..\..\..\Downloads\wire.png" />
-    <Image Include="..\..\..\..\Downloads\wireon.png" />
+    <ResourceCompile Include="LogicGameGUI.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bitmap1.bmp" />
+    <Image Include="IN_OUT\IN_off.png" />
+    <Image Include="IN_OUT\IN_on.png" />
+    <Image Include="IN_OUT\OUT_off.png" />
+    <Image Include="IN_OUT\OUT_on.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

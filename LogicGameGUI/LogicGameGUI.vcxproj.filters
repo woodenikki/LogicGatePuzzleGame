@@ -30,6 +30,9 @@
     <ClCompile Include="Wire.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Terminal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LogicGameForm.h">
@@ -47,5 +50,39 @@
     <ClInclude Include="Wire.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GameModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Terminal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Gridblock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="LogicGameGUI.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="IN_OUT\IN_off.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="IN_OUT\IN_on.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="IN_OUT\OUT_off.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="IN_OUT\OUT_on.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
