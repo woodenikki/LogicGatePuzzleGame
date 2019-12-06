@@ -17,5 +17,7 @@ public:
 	void connectInput(Terminal*);
 	void connectOutput(Terminal*);
 	void refreshState();
+	Terminal* getOutput() { return output; };
 
+	friend bool operator==(const Wire&, const Wire&);
 };

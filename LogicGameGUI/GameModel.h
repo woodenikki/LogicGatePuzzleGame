@@ -43,47 +43,122 @@ void initializeLevel1(Puzzle &puz) { //no gates
 	clearPuzzle(puz);
 
 	puz.wires.resize(1);
+
 	puz.inputs.resize(1);
-	
-	puz.out.connectWires(&puz.wires[0]);
-	puz.inputs[0].connectWires(&puz.wires[0]);
-}
-/*
-void initializeLevel2() { //NOT gate
-	myPuzzle.iA.setStatus(true);
-	myPuzzle.g1.setType('n');
-	myPuzzle.iA.refreshState();  //sets all component's statuses
+		puz.inputs[0].setStatus(false);
+
+	puz.out.connectWires(&puz.wires[0], 0);
+	puz.inputs[0].connectWires(&puz.wires[0], 0);
 }
 
-void initializeLevel3() { //AND gate
-	myPuzzle.iA.setStatus(false);
-	myPuzzle.iB.setStatus(false);
-	myPuzzle.g1.setType('a');
-	myPuzzle.iA.refreshState();
-	myPuzzle.iB.refreshState();
+void initializeLevel2(Puzzle& puz) { //NOT gate
+	clearPuzzle(puz);
+
+	puz.wires.resize(2);
+
+	puz.inputs.resize(1);
+		puz.inputs[0].setStatus(true); //default on
+
+	puz.gates.resize(1);
+		puz.gates[0] = Gate('n');
+
+	//wire0 (right)
+	puz.out.connectWires(&puz.wires[0], 0);
+	puz.gates[0].connectWires(&puz.wires[0], 0);
+	//wire1 (left)
+	puz.gates[0].connectWires(&puz.wires[1], 1);
+	puz.inputs[0].connectWires(&puz.wires[1], 0);
 }
 
-void initializeLevel4() { //OR gate
-	myPuzzle.iA.setStatus(false);
-	myPuzzle.iB.setStatus(false);
-	myPuzzle.g1.setType('o');
-	myPuzzle.iA.refreshState();
-	myPuzzle.iB.refreshState();
+void initializeLevel3(Puzzle& puz) { //AND gate
+	clearPuzzle(puz);
+
+	puz.wires.resize(3);
+
+	puz.inputs.resize(2);
+		puz.inputs[0].setStatus(false);
+		puz.inputs[1].setStatus(false);
+
+	puz.gates.resize(1);
+		puz.gates[0] = Gate('a');
+
+	//wire0 (to out)
+	puz.out.connectWires(&puz.wires[0], 0);
+	puz.gates[0].connectWires(&puz.wires[0], 0);
+	//wire1 (top)
+	puz.gates[0].connectWires(&puz.wires[1], 1); //how to connect it to specific port...???
+	puz.inputs[0].connectWires(&puz.wires[1], 0);
+	//wire2(bottom)
+	puz.gates[0].connectWires(&puz.wires[2], 2);
+	puz.inputs[1].connectWires(&puz.wires[2], 0);
+
 }
 
-void initializeLevel5() { //NAND gate
-	myPuzzle.iA.setStatus(true);
-	myPuzzle.iB.setStatus(true);
-	myPuzzle.g1.setType('A');
-	myPuzzle.iA.refreshState();
-	myPuzzle.iB.refreshState();
+void initializeLevel4(Puzzle& puz) { //OR gate
+	clearPuzzle(puz);
+
+	puz.wires.resize(3);
+
+	puz.inputs.resize(2);
+	puz.inputs[0].setStatus(false);
+	puz.inputs[1].setStatus(false);
+
+	puz.gates.resize(1);
+	puz.gates[0] = Gate('o');
+
+	//wire0 (to out)
+	puz.out.connectWires(&puz.wires[0], 0);
+	puz.gates[0].connectWires(&puz.wires[0], 0);
+	//wire1 (top)
+	puz.gates[0].connectWires(&puz.wires[1], 1); //how to connect it to specific port...???
+	puz.inputs[0].connectWires(&puz.wires[1], 0);
+	//wire2(bottom)
+	puz.gates[0].connectWires(&puz.wires[2], 2);
+	puz.inputs[1].connectWires(&puz.wires[2], 0);
 }
 
-void initializeLevel6() { //NOR gate
-	myPuzzle.iA.setStatus(true);
-	myPuzzle.iB.setStatus(true);
-	myPuzzle.g1.setType('O');
-	myPuzzle.iA.refreshState();
-	myPuzzle.iB.refreshState();
+void initializeLevel5(Puzzle& puz) { //NAND gate
+	clearPuzzle(puz);
+
+	puz.wires.resize(3);
+
+	puz.inputs.resize(2);
+	puz.inputs[0].setStatus(true);
+	puz.inputs[1].setStatus(true);
+
+	puz.gates.resize(1);
+	puz.gates[0] = Gate('A');
+
+	//wire0 (to out)
+	puz.out.connectWires(&puz.wires[0], 0);
+	puz.gates[0].connectWires(&puz.wires[0], 0);
+	//wire1 (top)
+	puz.gates[0].connectWires(&puz.wires[1], 1); //how to connect it to specific port...???
+	puz.inputs[0].connectWires(&puz.wires[1], 0);
+	//wire2(bottom)
+	puz.gates[0].connectWires(&puz.wires[2], 2);
+	puz.inputs[1].connectWires(&puz.wires[2], 0);
 }
-*/
+
+void initializeLevel6(Puzzle& puz) { //NOR gate
+	clearPuzzle(puz);
+
+	puz.wires.resize(3);
+
+	puz.inputs.resize(2);
+	puz.inputs[0].setStatus(true);
+	puz.inputs[1].setStatus(true);
+
+	puz.gates.resize(1);
+	puz.gates[0] = Gate('O');
+
+	//wire0 (to out)
+	puz.out.connectWires(&puz.wires[0], 0);
+	puz.gates[0].connectWires(&puz.wires[0], 0);
+	//wire1 (top)
+	puz.gates[0].connectWires(&puz.wires[1], 1); //how to connect it to specific port...???
+	puz.inputs[0].connectWires(&puz.wires[1], 0);
+	//wire2(bottom)
+	puz.gates[0].connectWires(&puz.wires[2], 2);
+	puz.inputs[1].connectWires(&puz.wires[2], 0);
+}

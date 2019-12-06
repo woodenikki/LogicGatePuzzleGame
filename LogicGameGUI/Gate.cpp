@@ -59,27 +59,28 @@ bool Gate::tick(bool a, bool b) {
 	return result;
 }
 
-void Gate::connectWires(Wire* wl) {
+void Gate::connectWires(Wire* wl, int port) { 
 	if (wl == 0) {
 		//throw exception requirement
 	}
-	if (wl + 1 == 0) {
-		//throw exception
+	switch (port) {
+	default:
+	case 0: //output
+		output = wl;
+		wl->connectInput(this);
+		break;
+	case 1: //top input
+		input1 = wl;
+		wl->connectOutput(this);
+		break;
+	case 2: //bottom input
+		input2 = wl;
+		if (gateType != 'n') { //skip third input if it is a not gate
+			wl->connectOutput(this);
+		}
+		break;
 	}
-	if ((wl + 2 == 0) && gateType != 'n') {
-		//throw exception
-	}
-	output = wl;
-	wl->connectInput(this);
-
-	input1 = wl + 1;
-	(wl + 1)->connectInput(this);
-
-	input2 = wl + 2;
-	if (gateType != 'n') { //skip third input if it is a not gate
-		(wl + 2)->connectInput(this);
-	}
-
+	return;
 
 }
 
@@ -88,4 +89,12 @@ void Gate::refreshState() {
 		tick(input1->getStatus(), input2->getStatus());
 		output->refreshState();
 	}
+}
+
+bool Gate::getStatusInput1() {
+	return input1->getStatus();
+}
+
+bool Gate::getStatusInput2() {
+	return input2->getStatus();
 }

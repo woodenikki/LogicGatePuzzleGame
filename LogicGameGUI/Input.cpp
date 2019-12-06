@@ -17,7 +17,7 @@ void Input::toggle() {
 	status = !status;
 }
 
-void Input::connectWires(Wire* wl) { 
+void Input::connectWires(Wire* wl, int port) { 
 	if (wl == 0) { 
 		//throw exception requirement
 	}

@@ -13,7 +13,7 @@ void Output::setStatus(bool b) {
 	status = b;
 }
 
-void Output::connectWires(Wire* wl) {
+void Output::connectWires(Wire* wl, int port) {
 	if (wl == 0) {
 		//throw exception requirement
 	}

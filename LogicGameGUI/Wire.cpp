@@ -25,3 +25,8 @@ void Wire::refreshState() {
 	setStatus(input->getStatus());
 	output->refreshState();
 }
+
+bool operator==(const Wire& w1, const Wire& w2) //overloading operators requirement
+{ if (&w1 == &w2) { 
+	return true; 
+} else return false; }

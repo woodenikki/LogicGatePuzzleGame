@@ -12,7 +12,8 @@ public:
 	bool getStatus();
 	void setStatus(bool);
 
-	void connectWires(Wire*);
+	void connectWires(Wire*, int);
 	void refreshState();
+	TerminalType getTerminalType() { return OUTPUT; }
 };
 

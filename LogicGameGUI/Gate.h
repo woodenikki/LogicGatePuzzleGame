@@ -19,8 +19,12 @@ public:
 	bool tick(bool a, bool b = false);
 	void setType(char);
 	char getType();
+	bool getStatusInput1();
+	bool getStatusInput2();
+	Wire* getOutput() { return output; };
 
-	void connectWires(Wire*);
+	void connectWires(Wire*, int);
 	void refreshState();
+	TerminalType getTerminalType() { return GATE; }
 };
 
