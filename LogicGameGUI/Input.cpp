@@ -18,8 +18,9 @@ void Input::toggle() {
 }
 
 void Input::connectWires(Wire* wl, int port) { 
+	
 	if (wl == 0) { 
-		//throw exception requirement
+		throw 0;
 	}
 	output = wl;
 	wl->connectInput(this);

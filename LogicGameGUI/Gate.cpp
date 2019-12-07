@@ -61,7 +61,7 @@ bool Gate::tick(bool a, bool b) {
 
 void Gate::connectWires(Wire* wl, int port) { 
 	if (wl == 0) {
-		//throw exception requirement
+		throw 0; //throw exception requirement
 	}
 	switch (port) {
 	default:

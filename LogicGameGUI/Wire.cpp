@@ -9,14 +9,14 @@ void Wire::setStatus(bool set) { sig = set; }
 
 void Wire::connectInput(Terminal* t) {
 	if (t == 0) {
-		//throw exception
+		throw 0; // exception
 	}
 	input = t;
 }
 
 void Wire::connectOutput(Terminal* t) {
 	if (t == 0) {
-		//throw exception
+		throw 0; //exception
 	}
 	output = t;
 }

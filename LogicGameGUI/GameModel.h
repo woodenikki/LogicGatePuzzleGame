@@ -1,3 +1,6 @@
+//Nikki Wood
+
+
 #pragma once
 #include "LogicGameForm.h"
 #include "Gate.h"
@@ -161,4 +164,144 @@ void initializeLevel6(Puzzle& puz) { //NOR gate
 	//wire2(bottom)
 	puz.gates[0].connectWires(&puz.wires[2], 2);
 	puz.inputs[1].connectWires(&puz.wires[2], 0);
+}
+
+void initializeLevel7(Puzzle& puz) {
+	puz.inputs.resize(2);
+	puz.inputs[0].setStatus(true);
+	puz.inputs[1].setStatus(false);
+
+	puz.gates.resize(2);
+	puz.gates[0] = Gate('n');
+	puz.gates[1] = Gate('a');
+
+	puz.wires.resize(4);
+
+}
+
+void initializeLevel8(Puzzle& puz) {
+	puz.inputs.resize(2);
+	puz.inputs[0].setStatus(false);
+	puz.inputs[1].setStatus(true);
+
+	puz.gates.resize(2);
+	puz.gates[0] = Gate('n');
+	puz.gates[1] = Gate('o');
+
+	puz.wires.resize(4);
+
+}
+
+void initializeLevel9(Puzzle& puz) {
+	puz.inputs.resize(3);
+	puz.inputs[0].setStatus(false);
+	puz.inputs[1].setStatus(false);
+	puz.inputs[2].setStatus(false);
+
+	puz.gates.resize(2);
+	puz.gates[0] = Gate('a');
+	puz.gates[1] = Gate('o');
+
+	puz.wires.resize(5);
+
+}
+
+void initializeLevel10(Puzzle& puz) {
+	puz.inputs.resize(4);
+	puz.inputs[0].setStatus(false);
+	puz.inputs[1].setStatus(false);
+	puz.inputs[2].setStatus(false);
+	puz.inputs[3].setStatus(false);
+
+	puz.gates.resize(3);
+	puz.gates[0] = Gate('o');
+	puz.gates[1] = Gate('o');
+	puz.gates[2] = Gate('a');
+
+	puz.wires.resize(7);
+
+}
+
+void initializeLevel11(Puzzle& puz) {
+	puz.inputs.resize(4);
+	puz.inputs[0].setStatus(true);
+	puz.inputs[1].setStatus(true);
+	puz.inputs[2].setStatus(true);
+	puz.inputs[3].setStatus(true);
+
+	puz.gates.resize(3);
+	puz.gates[0] = Gate('O');
+	puz.gates[1] = Gate('O');
+	puz.gates[2] = Gate('a');
+
+	puz.wires.resize(7);
+
+}
+
+void initializeLevel12(Puzzle& puz) {
+	puz.inputs.resize(4);
+	puz.inputs[0].setStatus(false);
+	puz.inputs[1].setStatus(false);
+	puz.inputs[2].setStatus(false);
+	puz.inputs[3].setStatus(false);
+
+	puz.gates.resize(3);
+	puz.gates[0] = Gate('a');
+	puz.gates[1] = Gate('a');
+	puz.gates[2] = Gate('o');
+
+	puz.wires.resize(7);
+
+}
+
+void initializeLevel13(Puzzle& puz) {
+	puz.inputs.resize(4);
+	puz.inputs[0].setStatus(false);
+	puz.inputs[1].setStatus(false);
+	puz.inputs[2].setStatus(false);
+	puz.inputs[3].setStatus(false);
+
+	puz.gates.resize(3);
+	puz.gates[0] = Gate('o');
+	puz.gates[1] = Gate('a');
+	puz.gates[2] = Gate('a');
+
+	puz.wires.resize(7);
+
+}
+
+void initializeLevel14(Puzzle& puz) {
+	puz.inputs.resize(4);
+	puz.inputs[0].setStatus(true);
+	puz.inputs[1].setStatus(false);
+	puz.inputs[2].setStatus(false);
+	puz.inputs[3].setStatus(true);
+
+	puz.gates.resize(5);
+	puz.gates[0] = Gate('n');
+	puz.gates[1] = Gate('n');
+	puz.gates[2] = Gate('a');
+	puz.gates[3] = Gate('a');
+	puz.gates[4] = Gate('a');
+
+	puz.wires.resize(9);
+
+}
+
+void initializeLevel15(Puzzle& puz) {
+	puz.inputs.resize(4);
+	puz.inputs[0].setStatus(true);
+	puz.inputs[1].setStatus(true);
+	puz.inputs[2].setStatus(true);
+	puz.inputs[3].setStatus(true);
+
+	puz.gates.resize(4);
+	puz.gates[0] = Gate('A');
+	puz.gates[1] = Gate('O');
+	puz.gates[2] = Gate('O');
+	puz.gates[3] = Gate('n');
+
+
+	puz.wires.resize(8);
+
 }
