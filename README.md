@@ -2,7 +2,7 @@
 
 Making a GUI work with C++ is a nightmare. First 6 levels have been completed:
 
-> (Video Demo)[https://youtu.be/6cduTnxbDeA]
+> [Video Demo](https://youtu.be/6cduTnxbDeA)
 
 ToDO: extend wires to connec to themselves. This will allow the rest of the levels to be completed. 
 
