@@ -1,1 +1,1 @@
-"# Synesthesia-Capstone" 
+"# SynesthesIA" 
